@@ -5,7 +5,6 @@
 
 TaskHandle_t TaskHandle_1;
 TaskHandle_t TaskHandle_2;
-TaskHandle_t TaskHandle_3;
 
 const int rs=12, e=11, d4=4, d5=5, d6=6, d7=7;
 LiquidCrystal lcd(rs,e,d4,d5,d6,d7);
@@ -23,7 +22,6 @@ void setup(){
 
   xTaskCreate(TaskOne, "One", 128, NULL, 2, &TaskHandle_1);
   xTaskCreate(TaskTwo, "Two", 128, NULL, 1, &TaskHandle_2);
-  xTaskCreate(TaskThree, "Two", 128, NULL, 1, &TaskHandle_3);
   vTaskStartScheduler();
 }
 
@@ -38,7 +36,6 @@ void TaskOne(void *pvParameters)  // This is a task.
     if (Button == 1) { //if is pressed
        vTaskPrioritySet(TaskHandle_1,1);
        vTaskPrioritySet(TaskHandle_2,2);
-       vTaskPrioritySet(TaskHandle_3,2);
     }
   }
 }
@@ -60,7 +57,6 @@ void TaskTwo(void *pvParameters)  // This is a task.
        digitalWrite(fan, LOW);
        delay(1000);
     }
-
     lcd.setCursor(0,0);
     lcd.print("OFFLINE");
 
@@ -68,21 +64,6 @@ void TaskTwo(void *pvParameters)  // This is a task.
     if (Button3 == 1) { //if is pressed
        vTaskPrioritySet(TaskHandle_1,2);
        vTaskPrioritySet(TaskHandle_2,1);
-    }
-  }
-}
-
-void TaskThree(void *pvParameters)  // This is a task.
-{
-  (void) pvParameters;
-
-  for (;;) // A Task shall never return or exit.
-  {
-    int Button = digitalRead(A4); //read the state of the button
-    if (Button == 1) { //if is pressed
-       vTaskPrioritySet(TaskHandle_1,2);
-       vTaskPrioritySet(TaskHandle_2,1);
-       vTaskPrioritySet(TaskHandle_3,1);
     }
   }
 }
