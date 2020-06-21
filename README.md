@@ -7,8 +7,8 @@ Nb :
 
 ## Screenshoot
 ### Offline
-![offline](Screenshoot/offline.PNG)
+(Screenshoot/offline.PNG)
 ### Play Heat
-![Play Heat](Screenshoot/Play Heat.PNG)
+(Screenshoot/PlayHeat.PNG)
 ### Play Normal
-![Play Normal](Screenshoot/Play Normal.PNG)
+(Screenshoot/PlayNormal.PNG)
