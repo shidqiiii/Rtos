@@ -1,0 +1,23 @@
+C:\Users\Shidqi\AppData\Local\Temp\arduino_build_727581\libraries\FreeRTOS\variantHooks.cpp.o: \
+ C:\Users\Shidqi\Documents\Arduino\libraries\FreeRTOS\src\variantHooks.cpp \
+ D:\Praktikum\arduino-nightly\hardware\arduino\avr\cores\arduino/Arduino.h \
+ D:\Praktikum\arduino-nightly\hardware\arduino\avr\cores\arduino/binary.h \
+ D:\Praktikum\arduino-nightly\hardware\arduino\avr\cores\arduino/WCharacter.h \
+ D:\Praktikum\arduino-nightly\hardware\arduino\avr\cores\arduino/WString.h \
+ D:\Praktikum\arduino-nightly\hardware\arduino\avr\cores\arduino/HardwareSerial.h \
+ D:\Praktikum\arduino-nightly\hardware\arduino\avr\cores\arduino/Stream.h \
+ D:\Praktikum\arduino-nightly\hardware\arduino\avr\cores\arduino/Print.h \
+ D:\Praktikum\arduino-nightly\hardware\arduino\avr\cores\arduino/Printable.h \
+ D:\Praktikum\arduino-nightly\hardware\arduino\avr\cores\arduino/USBAPI.h \
+ D:\Praktikum\arduino-nightly\hardware\arduino\avr\cores\arduino/Arduino.h \
+ D:\Praktikum\arduino-nightly\hardware\arduino\avr\variants\standard/pins_arduino.h \
+ C:\Users\Shidqi\Documents\Arduino\libraries\FreeRTOS\src\Arduino_FreeRTOS.h \
+ C:\Users\Shidqi\Documents\Arduino\libraries\FreeRTOS\src\FreeRTOSConfig.h \
+ C:\Users\Shidqi\Documents\Arduino\libraries\FreeRTOS\src\projdefs.h \
+ C:\Users\Shidqi\Documents\Arduino\libraries\FreeRTOS\src\portable.h \
+ C:\Users\Shidqi\Documents\Arduino\libraries\FreeRTOS\src\portmacro.h \
+ C:\Users\Shidqi\Documents\Arduino\libraries\FreeRTOS\src\mpu_wrappers.h \
+ C:\Users\Shidqi\Documents\Arduino\libraries\FreeRTOS\src\FreeRTOSVariant.h \
+ C:\Users\Shidqi\Documents\Arduino\libraries\FreeRTOS\src\task.h \
+ C:\Users\Shidqi\Documents\Arduino\libraries\FreeRTOS\src\list.h \
+ C:\Users\Shidqi\Documents\Arduino\libraries\FreeRTOS\src\timers.h
