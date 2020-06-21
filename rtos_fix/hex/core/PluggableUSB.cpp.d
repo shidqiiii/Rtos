@@ -1,4 +1,4 @@
-C:\Users\Shidqi\AppData\Local\Temp\arduino_build_727581\core\PluggableUSB.cpp.o: \
+C:\Users\Shidqi\AppData\Local\Temp\arduino_build_698563\core\PluggableUSB.cpp.o: \
  D:\Praktikum\arduino-nightly\hardware\arduino\avr\cores\arduino\PluggableUSB.cpp \
  D:\Praktikum\arduino-nightly\hardware\arduino\avr\cores\arduino\USBAPI.h \
  D:\Praktikum\arduino-nightly\hardware\arduino\avr\cores\arduino\Arduino.h \

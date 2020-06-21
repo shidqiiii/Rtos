@@ -6,6 +6,7 @@
 
 TaskHandle_t TaskHandle_1;
 TaskHandle_t TaskHandle_2;
+TaskHandle_t TaskHandle_3;
 
 const int rs=12, e=11, d4=4, d5=5, d6=6, d7=7;
 LiquidCrystal lcd(rs,e,d4,d5,d6,d7);
@@ -22,15 +23,20 @@ void setup(){
   pinMode(fan, 0x1);
 
   xTaskCreate(TaskOne, "One", 128, 
-# 23 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino" 3 4
-                                  __null
-# 23 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino"
-                                      , 2, &TaskHandle_1);
-  xTaskCreate(TaskTwo, "Two", 128, 
 # 24 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino" 3 4
                                   __null
 # 24 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino"
+                                      , 2, &TaskHandle_1);
+  xTaskCreate(TaskTwo, "Two", 128, 
+# 25 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino" 3 4
+                                  __null
+# 25 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino"
                                       , 1, &TaskHandle_2);
+  xTaskCreate(TaskThree, "Two", 128, 
+# 26 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino" 3 4
+                                    __null
+# 26 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino"
+                                        , 1, &TaskHandle_3);
   vTaskStartScheduler();
 }
 
@@ -43,8 +49,9 @@ void TaskOne(void *pvParameters) // This is a task.
     temperature();
     int Button = digitalRead(A2); //read the state of the button
     if (Button == 1) { //if is pressed
-       vTaskPrioritySet(TaskHandle_1,0);
+       vTaskPrioritySet(TaskHandle_1,1);
        vTaskPrioritySet(TaskHandle_2,2);
+       vTaskPrioritySet(TaskHandle_3,2);
     }
   }
 }
@@ -56,8 +63,8 @@ void TaskTwo(void *pvParameters) // This is a task.
   for (;;) // A Task shall never return or exit.
   {
     int Button1 = digitalRead(A3); //read the state of the button
-    if (Button1 == 0x1) { //if is pressed
-       digitalWrite(led, 0x1);
+    if (Button1 == 1) { //if is pressed
+       digitalWrite(led, 0x0);
        delay(1000);
     }
 
@@ -69,6 +76,27 @@ void TaskTwo(void *pvParameters) // This is a task.
 
     lcd.setCursor(0,0);
     lcd.print("OFFLINE");
+
+    int Button3 = digitalRead(A4); //read the state of the button
+    if (Button3 == 1) { //if is pressed
+       vTaskPrioritySet(TaskHandle_1,2);
+       vTaskPrioritySet(TaskHandle_2,1);
+    }
+  }
+}
+
+void TaskThree(void *pvParameters) // This is a task.
+{
+  (void) pvParameters;
+
+  for (;;) // A Task shall never return or exit.
+  {
+    int Button = digitalRead(A4); //read the state of the button
+    if (Button == 1) { //if is pressed
+       vTaskPrioritySet(TaskHandle_1,2);
+       vTaskPrioritySet(TaskHandle_2,1);
+       vTaskPrioritySet(TaskHandle_3,1);
+    }
   }
 }
 

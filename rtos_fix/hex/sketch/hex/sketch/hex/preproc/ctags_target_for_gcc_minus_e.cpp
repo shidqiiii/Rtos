@@ -1,8 +1,8 @@
-# 1 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino"
-# 2 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino" 2
-# 3 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino" 2
-# 4 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino" 2
-# 5 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino" 2
+# 1 "C:\\Users\\Shidqi\\Documents\\Arduino\\coba2_rtos\\coba2_rtos.ino"
+# 2 "C:\\Users\\Shidqi\\Documents\\Arduino\\coba2_rtos\\coba2_rtos.ino" 2
+# 3 "C:\\Users\\Shidqi\\Documents\\Arduino\\coba2_rtos\\coba2_rtos.ino" 2
+# 4 "C:\\Users\\Shidqi\\Documents\\Arduino\\coba2_rtos\\coba2_rtos.ino" 2
+# 5 "C:\\Users\\Shidqi\\Documents\\Arduino\\coba2_rtos\\coba2_rtos.ino" 2
 
 TaskHandle_t TaskHandle_1;
 TaskHandle_t TaskHandle_2;
@@ -22,14 +22,14 @@ void setup(){
   pinMode(fan, 0x1);
 
   xTaskCreate(TaskOne, "One", 128, 
-# 23 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino" 3 4
+# 23 "C:\\Users\\Shidqi\\Documents\\Arduino\\coba2_rtos\\coba2_rtos.ino" 3 4
                                   __null
-# 23 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino"
+# 23 "C:\\Users\\Shidqi\\Documents\\Arduino\\coba2_rtos\\coba2_rtos.ino"
                                       , 2, &TaskHandle_1);
   xTaskCreate(TaskTwo, "Two", 128, 
-# 24 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino" 3 4
+# 24 "C:\\Users\\Shidqi\\Documents\\Arduino\\coba2_rtos\\coba2_rtos.ino" 3 4
                                   __null
-# 24 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino"
+# 24 "C:\\Users\\Shidqi\\Documents\\Arduino\\coba2_rtos\\coba2_rtos.ino"
                                       , 1, &TaskHandle_2);
   vTaskStartScheduler();
 }

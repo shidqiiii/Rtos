@@ -1,5 +1,5 @@
-C:\Users\Shidqi\AppData\Local\Temp\arduino_build_727581\sketch\rtos_fix.ino.cpp.o: \
- C:\Users\Shidqi\AppData\Local\Temp\arduino_build_727581\sketch\rtos_fix.ino.cpp \
+C:\Users\Shidqi\AppData\Local\Temp\arduino_build_698563\sketch\rtos_fix.ino.cpp.o: \
+ C:\Users\Shidqi\AppData\Local\Temp\arduino_build_698563\sketch\rtos_fix.ino.cpp \
  D:\Praktikum\arduino-nightly\hardware\arduino\avr\cores\arduino/Arduino.h \
  D:\Praktikum\arduino-nightly\hardware\arduino\avr\cores\arduino/binary.h \
  D:\Praktikum\arduino-nightly\hardware\arduino\avr\cores\arduino/WCharacter.h \

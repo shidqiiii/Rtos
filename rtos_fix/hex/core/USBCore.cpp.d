@@ -1,4 +1,4 @@
-C:\Users\Shidqi\AppData\Local\Temp\arduino_build_727581\core\USBCore.cpp.o: \
+C:\Users\Shidqi\AppData\Local\Temp\arduino_build_698563\core\USBCore.cpp.o: \
  D:\Praktikum\arduino-nightly\hardware\arduino\avr\cores\arduino\USBCore.cpp \
  D:\Praktikum\arduino-nightly\hardware\arduino\avr\cores\arduino\USBAPI.h \
  D:\Praktikum\arduino-nightly\hardware\arduino\avr\cores\arduino\Arduino.h \

@@ -1,4 +1,4 @@
-C:\Users\Shidqi\AppData\Local\Temp\arduino_build_727581\core\HardwareSerial2.cpp.o: \
+C:\Users\Shidqi\AppData\Local\Temp\arduino_build_698563\core\HardwareSerial2.cpp.o: \
  D:\Praktikum\arduino-nightly\hardware\arduino\avr\cores\arduino\HardwareSerial2.cpp \
  D:\Praktikum\arduino-nightly\hardware\arduino\avr\cores\arduino\Arduino.h \
  D:\Praktikum\arduino-nightly\hardware\arduino\avr\cores\arduino\binary.h \

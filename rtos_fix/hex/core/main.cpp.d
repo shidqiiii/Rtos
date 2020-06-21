@@ -1,4 +1,4 @@
-C:\Users\Shidqi\AppData\Local\Temp\arduino_build_727581\core\main.cpp.o: \
+C:\Users\Shidqi\AppData\Local\Temp\arduino_build_698563\core\main.cpp.o: \
  D:\Praktikum\arduino-nightly\hardware\arduino\avr\cores\arduino\main.cpp \
  D:\Praktikum\arduino-nightly\hardware\arduino\avr\cores\arduino/Arduino.h \
  D:\Praktikum\arduino-nightly\hardware\arduino\avr\cores\arduino/binary.h \

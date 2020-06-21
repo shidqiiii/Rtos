@@ -7,6 +7,7 @@
 
 TaskHandle_t TaskHandle_1;
 TaskHandle_t TaskHandle_2;
+TaskHandle_t TaskHandle_3;
 
 const int rs=12, e=11, d4=4, d5=5, d6=6, d7=7;
 LiquidCrystal lcd(rs,e,d4,d5,d6,d7);
@@ -15,21 +16,23 @@ int temp;
 int fan = 2;
 int led = 3;
 
-#line 16 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino"
+#line 17 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino"
 void setup();
-#line 28 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino"
+#line 30 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino"
 void TaskOne(void *pvParameters);
-#line 43 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino"
+#line 46 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino"
 void TaskTwo(void *pvParameters);
-#line 66 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino"
+#line 75 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino"
+void TaskThree(void *pvParameters);
+#line 90 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino"
 void temperature();
-#line 86 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino"
+#line 110 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino"
 void nyala();
-#line 91 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino"
+#line 115 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino"
 void mati();
-#line 96 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino"
+#line 120 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino"
 void loop();
-#line 16 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino"
+#line 17 "E:\\Materi Kuliah\\Semester 6\\Sistem Operasi Waktu Nyata\\rtos fix\\rtos_fix\\rtos_fix.ino"
 void setup(){
   // put your setup code here, to run once:
   Serial.begin(9600);
@@ -39,6 +42,7 @@ void setup(){
 
   xTaskCreate(TaskOne, "One", 128, NULL, 2, &TaskHandle_1);
   xTaskCreate(TaskTwo, "Two", 128, NULL, 1, &TaskHandle_2);
+  xTaskCreate(TaskThree, "Two", 128, NULL, 1, &TaskHandle_3);
   vTaskStartScheduler();
 }
 
@@ -51,8 +55,9 @@ void TaskOne(void *pvParameters)  // This is a task.
     temperature();
     int Button = digitalRead(A2); //read the state of the button
     if (Button == 1) { //if is pressed
-       vTaskPrioritySet(TaskHandle_1,0);
+       vTaskPrioritySet(TaskHandle_1,1);
        vTaskPrioritySet(TaskHandle_2,2);
+       vTaskPrioritySet(TaskHandle_3,2);
     }
   }
 }
@@ -64,8 +69,8 @@ void TaskTwo(void *pvParameters)  // This is a task.
   for (;;) // A Task shall never return or exit.
   {
     int Button1 = digitalRead(A3); //read the state of the button
-    if (Button1 == HIGH) { //if is pressed
-       digitalWrite(led, HIGH);
+    if (Button1 == 1) { //if is pressed
+       digitalWrite(led, LOW);
        delay(1000);
     }
 
@@ -77,6 +82,27 @@ void TaskTwo(void *pvParameters)  // This is a task.
 
     lcd.setCursor(0,0);
     lcd.print("OFFLINE");
+
+    int Button3 = digitalRead(A4); //read the state of the button
+    if (Button3 == 1) { //if is pressed
+       vTaskPrioritySet(TaskHandle_1,2);
+       vTaskPrioritySet(TaskHandle_2,1);
+    }
+  }
+}
+
+void TaskThree(void *pvParameters)  // This is a task.
+{
+  (void) pvParameters;
+
+  for (;;) // A Task shall never return or exit.
+  {
+    int Button = digitalRead(A4); //read the state of the button
+    if (Button == 1) { //if is pressed
+       vTaskPrioritySet(TaskHandle_1,2);
+       vTaskPrioritySet(TaskHandle_2,1);
+       vTaskPrioritySet(TaskHandle_3,1);
+    }
   }
 }
 
