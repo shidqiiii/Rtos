@@ -38,7 +38,7 @@
      <ITEM name="HexMode">0</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="30" x="213" flags="00000008" y="282" h="16" pid="3" iid="1">
+   <POPUP w="258" x="213" flags="00000008" y="282" h="255" pid="3" iid="1">
     <PROPERTIES/>
    </POPUP>
    <POPUP w="8" x="233" flags="0000000a" y="302" h="1" pid="10" iid="1">

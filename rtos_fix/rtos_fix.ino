@@ -72,10 +72,14 @@ void temperature(){
   temp = analogRead(A0);
     temp = temp* (5.0 * 100.0/1024.0);
     if(temp < 25){
-      lcd.print("Normal");
+      lcd.print("Moist");
       mati();
     }
-    else if(temp >= 25){
+    else if(temp >= 25, temp <= 28){
+      lcd.print("Normal");
+      normal();
+    }
+    else if(temp >= 29){
       lcd.print("Heat");
       nyala();
     }
@@ -95,6 +99,11 @@ void nyala(){
 
 void mati(){
   digitalWrite(led, HIGH);
+  digitalWrite(fan, LOW);
+}
+
+void normal(){
+  digitalWrite(led, LOW);
   digitalWrite(fan, LOW);
 }
       
