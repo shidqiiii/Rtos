@@ -7,8 +7,8 @@ Nb :
 
 ## Screenshoot
 ### Offline
-(Screenshoot/offline.PNG)
+![Tugas 1](Screenshoot/offline.PNG)
 ### Play Heat
-(Screenshoot/PlayHeat.PNG)
+![Tugas 2](Screenshoot/PlayHeat.PNG)
 ### Play Normal
-(Screenshoot/PlayNormal.PNG)
+![Tugas 3](Screenshoot/PlayNormal.PNG)
